@@ -22,7 +22,7 @@ export class Food {
     public draw() {
         if (this.context) {
             let image = new Image();
-            image.src = 'food.png';
+            image.src = 'assets/food.png';
             this.context.drawImage(image,this.x, this.y, this.w, this.h);
         }
     }

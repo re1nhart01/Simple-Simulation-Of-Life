@@ -1,4 +1,4 @@
-import { CANVAS_HEIGHT, CANVAS_WIDTH, getXY } from ".";
+import { CANVAS_HEIGHT, CANVAS_WIDTH, getXY } from "./index";
 import { BaseMob } from "./BaseMob";
 import {Food} from "./Food";
 class Mob extends BaseMob {
@@ -45,7 +45,7 @@ class Mob extends BaseMob {
     public override draw() {
         if (this.context) {
             let image = new Image();
-            image.src = 'amongus.webp';
+            image.src = 'assets/amongus.webp';
             this.context.drawImage(image,this.x, this.y, this.w, this.h);
         }
         this.daysOfLife++;
@@ -101,7 +101,7 @@ class Mob extends BaseMob {
             this.countOfIterationUntilDie += 10;
         } else {
             const index = Math.floor(Math.random() * filteredFood.length);
-            const delta = foods[index]
+            const delta = filteredFood[index]
             this.x = delta.x;
             this.y = delta.y;
             foods.splice(index, 1)

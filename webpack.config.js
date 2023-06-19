@@ -4,10 +4,10 @@ module.exports = {
     mode: "development",
     devtool: "inline-source-map",
     entry: {
-        main: "./index.ts",
+        main: "./src/ts/index.ts",
     },
     output: {
-        path: __dirname,
+        path: path.resolve(__dirname, './src'),
         filename: "script.js" // <--- Will be compiled to this single file
     },
     resolve: {
