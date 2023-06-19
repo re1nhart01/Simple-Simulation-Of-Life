@@ -63,6 +63,14 @@ class Mob extends BaseMob {
 
     public override goToClosestFood(foods: Food[]): void {
         if (foods.length === 0) {
+            let dx = Math.round(Math.random() * CANVAS_WIDTH) - this.x;
+            let dy = Math.round(Math.random() * CANVAS_HEIGHT) - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            let normalizedDx = dx / distance;
+            let normalizedDy = dy / distance;
+            let moveDistance = 60;
+            this.x += Math.round(normalizedDx * moveDistance);
+            this.y += Math.round(normalizedDy * moveDistance);
             return;
         }
         const filteredFood = foods.filter((el) => {
